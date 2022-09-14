@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    image: php:8.2-rc-fpm
+    container_name: phpfpmapp
+    restart: always
+    working_dir: /var/www
+    volumes:
+      - ../src:/var/www
+  nginx:
+    image: nginx:latest
+    container_name: nginxcontainer
+    restart: always
+    ports:
+      - "8000:80"
+    volumes:
+      - ../src:/var/www
+      - ./nginx:/etc/nginx/conf.d
