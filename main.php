@@ -18,9 +18,7 @@ switch ($operator) {
     case "bigger than": bigger($first, $second); break;
     case "less than": less($first, $second); break;
     case "equal to": equal($first, $second); break;
-    default:
-        echo "no such operation";
-    //case "-": break;
+    default: echo "no such operation";
 
 }
 
