@@ -28,7 +28,10 @@ function calc($a, $b, $c)
             echo $a - $b;
             break;
         case "/":
+            if($b != 0)
             echo $a / $b;
+            else
+            echo "нельзя делить на ноль";
             break;
         case "*":
             echo $a * $b;
