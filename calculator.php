@@ -11,7 +11,7 @@
 // &#8730; => √
 
 $a = $_GET['a'];
-$b = $_GET['b'];
+$b = $_GET['b'] ?? null;
 $c = $_GET['c'];
 
 /**
@@ -20,7 +20,7 @@ $c = $_GET['c'];
 * and 1 optinal arg - $b (if you want to get square root).
 * @return the calculated result of the operation
 **/
-function calc($a, $b = null, string $c) {
+function calc($a, string $c, $b = null) {
     return match ($c) {
         "add", "+" => $a + $b,
         "subtract", "-" => $a - $b,
@@ -32,25 +32,15 @@ function calc($a, $b = null, string $c) {
     };
 }
 
-/**
-* Main function
-* with ZeroDivisionError Exception Handling
-**/
-function main() {
-    global $a, $b, $c;
+// Checking args and start main func
+// with ZeroDivisionError Exception Handling
+if (is_numeric($a) && (is_numeric($b)) || $b === null) {
     try {
-        $result = calc($a, $b, $c);
+        $result = calc($a, $c, $b);
         print_r($result);
     } catch (DivisionByZeroError $e) {
-        print_r("You must not divide by zero!");
+        echo "You must not divide by zero!";
     }
-}
-
-// Checking args and start main func
-if (is_numeric($a) && is_numeric($b)) {
-    main();
 } else {
-    print_r("Invalid Arguments!");
+    echo "Invalid Arguments!";
 }
-
-?>
