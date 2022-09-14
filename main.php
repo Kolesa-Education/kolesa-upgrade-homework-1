@@ -18,6 +18,7 @@ switch ($operator) {
     case "bigger than": bigger($first, $second); break;
     case "less than": less($first, $second); break;
     case "equal to": equal($first, $second); break;
+    case "percent of": percent($first, $second); break;
     default: echo "no such operation";
 
 }
@@ -70,6 +71,10 @@ function equal(int $num1, int $num2) {
     } else {
         echo $num1 . " is not equal to " . $num2;
     }
+}
+
+function percent(int $num1, int $num2) {
+    echo $num2 * $num1 / 100;
 }
 ?>
 
