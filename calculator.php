@@ -32,15 +32,19 @@ function calc($a, string $c, $b = null) {
     };
 }
 
+function isArgsCorrect($a, $b) {
+    return is_numeric($a) && is_numeric($b) OR $b === null;
+}
+
 // Checking args and start main func
 // with ZeroDivisionError Exception Handling
-if (is_numeric($a) && (is_numeric($b)) || $b === null) {
+if (!isArgsCorrect($a, $b)) {
+    echo 'Invalid Arguments!';
+} else {
     try {
         $result = calc($a, $c, $b);
         echo $result;
     } catch (DivisionByZeroError $e) {
         echo "You must not divide by zero!";
     }
-} else {
-    echo "Invalid Arguments!";
 }
