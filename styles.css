@@ -1,6 +1,5 @@
 body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url('./bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 1280px 720px;
 }
