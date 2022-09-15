@@ -37,7 +37,7 @@ function calc($a, string $c, $b = null) {
 if (is_numeric($a) && (is_numeric($b)) || $b === null) {
     try {
         $result = calc($a, $c, $b);
-        print_r($result);
+        echo $result;
     } catch (DivisionByZeroError $e) {
         echo "You must not divide by zero!";
     }
