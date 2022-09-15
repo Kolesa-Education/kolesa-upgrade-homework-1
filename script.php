@@ -27,7 +27,11 @@ switch ($c) {
         echo $a ** $b;
         break;
 	case "//":
-        echo $a % $b;
+        if ($b != 0) {
+            echo $a % $b;
+        }  else {
+            echo "модуля нуля не существует";
+        }
         break;
 	default:
         echo "не правильный запрос";
