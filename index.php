@@ -10,10 +10,11 @@ $a = $_GET['a'];
 $b = $_GET['b'];
 $c = $_GET['c'];
 
-$regex = '^[-+]?(\d*[.,])?\d+$';
+$regex = '/^[-+]?(\d*[.])?\d+$/';
 
 if ((!preg_match($regex, $a)) || (!preg_match($regex, $b))) {
     echo "values \"a\" or \"b\" should be numeric";
+    exit;
 }
 
 switch ($c) {
