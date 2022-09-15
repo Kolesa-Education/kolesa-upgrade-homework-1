@@ -1,5 +1,8 @@
+html{
+    font-family:'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url('./bg.jpg');
     background-size: 1280px 720px;
 }
