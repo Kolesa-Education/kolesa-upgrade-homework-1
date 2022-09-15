@@ -9,14 +9,14 @@ switch ($c) {
         echo $a + $b;
         break;
     case "-":
-        echo $a + $b;
+        echo $a - $b;
         break;
     case "*":
-        echo $a + $b;
+        echo $a * $b;
         break;
     
     case "/":
-        echo $a + $b;
+        echo $a / $b;
         break;
 	case "**":
         echo $a ** $b;
