@@ -1,5 +1,6 @@
 <?php
 $error = "";
+$zerodiv = "";
 $x = "";
 $y = "";
 $result = "";
@@ -9,6 +10,7 @@ if (isset($_GET['operation'])) {
     $operation = $_GET['operation'];
 
     if (is_numeric($x) && is_numeric($y)) {
+
         switch ($operation) {
             case "add":
                 $result = $x + $y;
@@ -20,7 +22,12 @@ if (isset($_GET['operation'])) {
                 $result = $x * $y;
                 break;
             case "divide":
-                $result = $x / $y;
+                if ($y == 0) {
+                    $zerodiv = "Division by zero error! Enter another Number 2";
+                } else {
+                    $result = $x / $y;
+                }
+
                 break;
             case "module":
                 $result = $x % $y;
@@ -46,6 +53,7 @@ if (isset($_GET['operation'])) {
 <body>
     <h2>
         <?=$error?>
+        <?=$zerodiv?>
     </h2>
     <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
         <!-- Number 1 -->
