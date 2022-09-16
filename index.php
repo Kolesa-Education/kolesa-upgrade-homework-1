@@ -17,6 +17,10 @@
         <option value="-">-</option>
         <option value="/">/</option>
         <option value="*">*</option>
+        <option value="**">**</option>
+        <option value="%">%</option>
+        <option value=">">></option>
+        <option value="<"><</option>
     </select>
     <label for="b">b:</label>
     <input type="text" name="b" value="<?= $_GET['b'] ?>">
@@ -47,6 +51,24 @@
                         break;
                     case "*":
                         echo $a * $b;
+                        break;
+                    case "**":
+                        echo $a ** $b;
+                        break;
+                    case "%":
+                        echo $a % $b;
+                        break;
+                    case ">":
+                        $currentResult = $a > $b ? "Верно" : "Не Верно";
+                        echo $currentResult;
+                        break;
+                    case "<":
+                        $currentResult = $a < $b ? "Верно" : "Не Верно";
+                        echo $currentResult;
+                        break;
+                    case "=":
+                        $currentResult = $a == $b ? "Верно" : "Не Верно";
+                        echo $currentResult;
                         break;
                 }
             } else {
