@@ -1,0 +1,22 @@
+html, body {
+	height: 90%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+form {
+	border: 1px solid black;
+	padding: 15px;
+}
+
+span {
+	color: red;
+}
