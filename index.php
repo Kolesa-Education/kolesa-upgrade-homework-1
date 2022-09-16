@@ -4,10 +4,10 @@
 #Подозреваю, что ментору надо будет изменять путь или запускать в веб среде как мы делали на лекции
 #Как лучше сделать в след. раз?:)
 
-$a = is_numeric($_GET['a'])?$_GET['a']*1:"No Valid";    # аргумент а
-$b = is_numeric($_GET['b'])?$_GET['b']*1:"No Valid";    # аргумент b
+$a = is_numeric($_GET['a'])?$_GET['a']:FALSE;   # аргумент а
+$b = is_numeric($_GET['b'])?$_GET['b']:FALSE;    # аргумент b
 $c = $_GET['c'];                                        # знак выполнения операции
-if ($a =="No Valid" or $b == "No Valid"){
+if (!$a or !$b){
     echo "а или b имеют неверный тип";
 }
 else{
@@ -31,6 +31,7 @@ switch ($c) {
         break;
     case "*":                                           # Умножение
         echo $a * $b;
+        break;
     case "%":                                           # Остаток от деления
         echo $a % $b;
         break;
