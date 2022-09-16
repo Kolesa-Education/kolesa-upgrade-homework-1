@@ -10,16 +10,27 @@
 // -   => -
 // &#8730; => √
 
-$a = $_GET['a'];
-$b = $_GET['b'] ?? null;
-$c = $_GET['c'];
+
+/**
+ * Checks are the required args in $_GET array exists
+ */
+function isArgsExist() {
+    return array_key_exists('a', $_GET) && array_key_exists('c', $_GET);
+}
+
+/**
+ * Checks if the operand args are numbers
+ */
+function isArgsNumbers($a, $b) {
+    return is_numeric($a) && is_numeric($b) OR $b === null;
+}
 
 /**
 * Calc function contains The Calculator App main logic
 * @param takes 2 required args: $a and $c,
 * and 1 optinal arg - $b (if you want to get square root).
 * @return the calculated result of the operation
-**/
+*/
 function calc($a, string $c, $b = null) {
     return match ($c) {
         "add", "+" => $a + $b,
@@ -32,19 +43,23 @@ function calc($a, string $c, $b = null) {
     };
 }
 
-function isArgsCorrect($a, $b) {
-    return is_numeric($a) && is_numeric($b) OR $b === null;
-}
-
 // Checking args and start main func
 // with ZeroDivisionError Exception Handling
-if (!isArgsCorrect($a, $b)) {
-    echo 'Invalid Arguments!';
-} else {
-    try {
-        $result = calc($a, $c, $b);
-        echo $result;
-    } catch (DivisionByZeroError $e) {
-        echo "You must not divide by zero!";
-    }
+if (!isArgsExist()) {
+    exit("Not enough arguments!");
+}
+
+$a = $_GET['a'];
+$b = $_GET['b'];
+$c = $_GET['c'];
+
+if (!isArgsNumbers($a, $b)) {
+    exit("Invalid Arguments!");
+}
+
+try {
+    $result = calc($a, $c, $b);
+    echo $result;
+} catch (DivisionByZeroError $e) {
+    echo "You must not divide by zero!";
 }
