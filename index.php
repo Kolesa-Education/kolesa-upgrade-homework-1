@@ -12,7 +12,7 @@ if (empty($_GET['operation'])) {
 }
 
 
-if (empty($_GET['x1']) || empty($_GET['x2'])) {
+if ($_GET['x1']==null || $_GET['x2']==null) {
     echo "Аргументы не переданы";
     exit(0);
 }
@@ -40,6 +40,10 @@ switch ($operation) {
         echo $x1 - $x2;
         break;
     case "/":
+        if ($x2==0) {
+            echo "На ноль делить нельзя";
+            exit(0);
+        }
         echo $x1 / $x2;
         break;
     case "*":
