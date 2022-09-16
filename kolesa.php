@@ -24,21 +24,6 @@
             </select>
             <button type = "submit" name = "submit" value = "submit">=</button>
             <p>Answer:</p>
-            <script>
-                $(document).ready(function(){
-                    $('#form').submit(function(e))
-               
-                $.ajax({
-                    type: "POST",
-                    url: "kolesa.php",
-                    data:$("#form").serialize(),
-                    success: function(data){
-                        console.log(data)
-                    }
-                }
-                );
-            })
-            </script>
             <?php
                     error_reporting(E_ERROR | E_PARSE);
                     $a = $_GET['a'];
