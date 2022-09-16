@@ -1,9 +1,9 @@
 <?php
-$a = $_GET['a'];
-$b = $_GET['b'];
-$c = $_GET['c']; // operation 
+if (!empty($_GET['a']) && !empty($_GET['b']) && !empty($_GET['c'])) {
+    $a = $_GET['a'];
+    $b = $_GET['b'];
+    $c = $_GET['c']; // operation 
 
-if (!empty($a) && !empty($b) && !empty($b)) {
     if (is_numeric($a) && is_numeric($b) ) {
         switch($c) {
             case "+":
