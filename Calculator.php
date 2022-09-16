@@ -14,6 +14,12 @@ $a = $_GET['a'];
 $b = $_GET['b'];
 $c = $_GET['c'];
 
+if (!isset ($a,$b,$c))
+{
+    echo "Не все параметры заданы";
+    die();
+}
+
 if (is_numeric($a) && is_numeric($b)) {
 
     switch ($c) {
@@ -35,14 +41,14 @@ if (is_numeric($a) && is_numeric($b)) {
             echo $a * $b;
             break;
         case "^":
-            echo $a ** $b;
+            echo pow($a,$b);
             break;
         case "%":
             echo $b * ($a / 100);
             break;
         case "√":
             if ($b == 0) {
-                echo "На ноль делить нельзя";
+                echo "Невозможно извлечь корень 0-ой степени";
                 break;
             } else {
                 echo pow($a, 1 / $b);
@@ -66,4 +72,3 @@ if (is_numeric($a) && is_numeric($b)) {
     echo "Проверьте правильность введенных данных";
 }
 
-?>
