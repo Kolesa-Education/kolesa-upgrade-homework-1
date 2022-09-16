@@ -1,8 +1,8 @@
 <?php
 
-$a = $_GET[7];
-$b = $_GET[8];
-$c = $_GET["+"];
+$a = $_GET['a'];
+$b = $_GET['b'];
+$c = $_GET["c"];
 
 /*calc($a, $b, $c);*/
 
@@ -87,7 +87,6 @@ function calc_alt( $a,  $b, string $c){
 }
 
 //третий варик
-calc_alt_1(7,7,"s");
 function calc_alt_1($a, $b, $c){
    if(!is_numeric($a)|| !is_numeric($b)|| !is_string($c)) echo "неправильный ввод ";
    else{
