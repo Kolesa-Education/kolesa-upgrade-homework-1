@@ -16,17 +16,15 @@ $expression = str_split($str_expression);
 
 switch ($func) {
 	case 'general':
-		$expression = transformInput($expression);
+		$expression = makePrioritizedOperations(transformInput($expression));
 		if(is_null($expression)){
 			echo "Error. Unknown symbol...";
 			break;
 		}
-		$expression = makePrioritizedOperations($expression);
 		$operator = ' ';
 		$result = 0;
 		for ($i=0; $i < count($expression); $i++) { 
 			if(is_numeric($expression[$i])){
-				//echo $expression[$i] . PHP_EOL;
 				$inter_res = getOperationResult($result, $expression[$i], $operator);
 				if(is_null($inter_res)){
 					echo "One of the operators is wrong...";
@@ -40,7 +38,7 @@ switch ($func) {
 				break 2;
 			}
 		}
-		echo "Result is " . strval($result) ;
+		echo "Result is " . strval($result);
 		break;
 	case 'comparison':
 		$result = makeComparison($expression, $str_expression);
