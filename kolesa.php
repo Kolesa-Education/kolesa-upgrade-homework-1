@@ -39,68 +39,28 @@
                     switch ($c){
                         case "add":
                             $d = $a + $b;
-                            echo $a;
-                            echo "\n";
-                            echo "+";
-                            echo "\n";
-                            echo $b;
-                            echo "\n";
-                            echo "=";
-                            echo "\n";
-                            echo $d;
+                            echo "$a + $b = $d";
                             break;
                         case "subtract":
                             $d = $a - $b;
-                            echo $a;
-                            echo "\n";
-                            echo "-";
-                            echo "\n";
-                            echo $b;
-                            echo "\n";
-                            echo "=";
-                            echo "\n";
-                            echo $d;
+                            echo "$a - $b = $d";
                             break;
                         case "divide":
                             if($b == 0){
-                                echo $a;
-                                echo "\n";
-                                echo "/";
-                                echo "\n";
-                                echo $b;
-                                echo "\n";
+                                echo "$a / $b, ";
                                 echo "Cannot divide by 0, put different value for b";
                             }else{
                                 $d = $a / $b;
-                                echo $a;
-                                echo "\n";
-                                echo "/";
-                                echo "\n";
-                                echo $b;
-                                echo "\n";
-                                echo "=";
-                                echo "\n";
-                                echo $d;
+                                echo "$a / $b = $d";
                             }
                             break;
                         case "multiply":
                             $d = $a * $b;
-                            echo $a;
-                            echo "\n";
-                            echo "*";
-                            echo "\n";
-                            echo $b;
-                            echo "\n";
-                            echo "=";
-                            echo "\n";
-                            echo $d;
+                            echo "$a * $b = $d";
                             break;
                         case "power":
-                            echo $a;
-                            echo " to the power of ";
-                            echo $b;
-                            echo " = ";
-                            echo $a**$b;
+                            $d = $a**$b;
+                            echo "$a to the power of $b = $d";
                             break;
                         case "percentage":
                             echo $a * ($b / 100);
@@ -119,26 +79,20 @@
                             break;
                         case "<":
                             if($a > $b){
-                                echo "Wrong, ";
-                                echo "$a > $b";
+                                echo "Wrong, $a > $b";
                             }else if($a < $b){
-                                echo "Correct, ";
-                                echo "$a < $b";
+                                echo "Correct, $a < $b";
                             }else{
-                                echo "Wrong, ";
-                                echo "$a = $b";
+                                echo "Wrong, $a = $b";
                             }
                             break;
                         case "=":
                             if($a > $b){
-                                echo "Wrong, ";
-                                echo "$a > $b";
+                                echo "Wrong, $a > $b";
                             }else if($a < $b){
-                                echo "Wrong, ";
-                                echo "$a < $b";
+                                echo "Wrong, $a < $b";
                             }else{
-                                echo "Correct, ";
-                                echo "$a = $b";
+                                echo "Correct, $a = $b";
                             }
                             break;
                         case "sin()":
@@ -159,6 +113,3 @@
         </form>
     </body>
 </html>
-
-
-
