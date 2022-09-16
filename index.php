@@ -5,12 +5,18 @@
 // %2F => /
 // -   => -
 
+// checking empty parametrs
+if ($_GET['a'] == null || $_GET['b'] == null || $_GET['c'] == null) {
+    echo "please insert all a,b,c";
+    exit();
+}
+
 $a = $_GET['a'];
 $b = $_GET['b'];
 $c = $_GET['c'];
 
 // list of mathematic opeations
-$math_oper = array("-", " ", "*", "/", "pow", ">", "<", "=", "%");
+$math_oper = array("-", urldecode("+"), "*", "/", "pow", ">", "<", "=", "%");
 
 // validation inserted mathematic opeation
 if (!in_array($c, $math_oper)) {
@@ -19,16 +25,13 @@ if (!in_array($c, $math_oper)) {
 }
 
 // validation inserted numbers
-$number_type_flag = false;
-
-if (is_numeric($a) && is_numeric($b)) {
-    $number_type_flag = true;
-} else {
+if (!is_numeric($a) || !is_numeric($b)) {
     echo "inserted numbers non numeric";
+    exit();
 }
 
 // calculate
-if (in_array($c, $math_oper) && $number_type_flag) {
+if (in_array($c, $math_oper) && is_numeric($a) && is_numeric($b)) {
     switch ($c) {
         case urldecode("+"):
             echo $a + $b;
