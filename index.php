@@ -13,17 +13,9 @@ $c = $_GET['c'];
 $math_oper = array("-", " ", "*", "/", "pow", ">", "<", "=", "%");
 
 // validation inserted mathematic opeation
-$math_oper_flag = false;
-
-for ($i = 0; $i < count($math_oper); $i++) {
-    if ($math_oper[$i] == $c) {
-        $math_oper_flag = true;
-        break;
-    }
-}
-
-if ($math_oper_flag == false) {
+if (!in_array($c, $math_oper)) {
     echo "undefined operation, please choose from list: + - * / pow < > = %\n";
+    exit();
 }
 
 // validation inserted numbers
@@ -36,9 +28,9 @@ if (is_numeric($a) && is_numeric($b)) {
 }
 
 // calculate
-if ($math_oper_flag && $number_type_flag) {
+if (in_array($c, $math_oper) && $number_type_flag) {
     switch ($c) {
-        case " ":
+        case urldecode("+"):
             echo $a + $b;
             break;
         case "-":
