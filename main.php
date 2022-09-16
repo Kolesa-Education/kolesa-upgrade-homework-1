@@ -12,13 +12,20 @@
 // %    процент
 
 //проверка на наличие необходимых переменных в GET- запросе
-if(isset($_GET['a']) && isset($_GET['b']) && isset($_GET['c'])) {
+if (isset($_GET['a'], $_GET['b'], $_GET['c'])) {
     $a = $_GET['a'];
     $b = $_GET['b'];
     $c = $_GET['c'];
+} else {
+    echo "Не хватает переменных!";
+    return;
+}
 
     //Проверка на соответствие формата переменных
-    if (is_numeric($a) && is_numeric($b)) {
+    if (!is_numeric($a) || !is_numeric($b)) {
+        echo "Неверный формат";
+        return;
+    }
         switch ($c) {
             case "+":
                 echo $a + $b;
@@ -27,6 +34,10 @@ if(isset($_GET['a']) && isset($_GET['b']) && isset($_GET['c'])) {
                 echo $a - $b;
                 break;
             case "/":
+                if ($b == 0){
+                    echo "На ноль делить нельзя!";
+                    break;
+                }
                 echo $a / $b;
                 break;
             case "*":
@@ -53,11 +64,5 @@ if(isset($_GET['a']) && isset($_GET['b']) && isset($_GET['c'])) {
             default:
                 echo "Неизвестный оператор";
         }
-    } else {
-        echo "Неверный формат";
-    }
-} else {
-    echo "Не хватает переменных";
-}
 
 ?>
