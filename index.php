@@ -6,10 +6,12 @@
 // %2D => -
 // %25 => %
 
-$a = $_GET['a'];
-$b = $_GET['b'];
-$c = $_GET['c'];
 
+if (isset($a) || isset($b) || isset($c) ){
+    $a = $_GET['a'];
+    $b = $_GET['b'];
+    $c = $_GET['c'];
+}
 if (empty($a) || empty($b) || empty($c) ) {
     echo 'Отсутствует один из параметров a, b или c';
     return;
@@ -21,36 +23,38 @@ if (empty($a) || empty($b) || empty($c) ) {
     return;
 }
 else {
-    switch ($c):
-        case "+":
-            echo '$a + $b = ' . ($a + $b);
-            break;
-        case "-":
-            echo '$a - $b = ' . ($a - $b);
-            break;
-        case "/":
-            echo '$a / $b = ' . ($a / $b);
-            break;
-        case "*":
-            echo '$a * $b = ' . ($a * $b);
-            break;
-        case "%":
-            echo '$a % $b = ' . ($a % $b);
-            break;
-        case "**":
-            echo '$a ** $b = ' . ($a ** $b);
-            break;
-        case "max":
-            echo 'max($a, $b) = ' . max($a, $b);
-            break;
-        case "min":
-            echo 'min($a, $b) = ' . min($a, $b);
-            break;
-        case "log":
-            echo 'log($a, $b) = ' . log($a, $b);
-            break;
-        default:
-            echo "Не правильная операция";
-    endswitch;
+switch ($c):
+    case "+":
+        echo '$a + $b = ' . ($a + $b);
+        break;
+    case "-":
+        echo '$a - $b = ' . ($a - $b);
+        break;
+    case "/":
+        echo '$a / $b = ' . ($a / $b);
+        break;
+    case "*":
+        echo '$a * $b = ' . ($a * $b);
+        break;
+    case "%":
+        echo '$a % $b = ' . ($a % $b);
+        break;
+    case "**":
+        echo '$a ** $b = ' . ($a ** $b);
+        break;
+    case "max":
+        echo 'max($a, $b) = ' . max($a, $b);
+        break;
+    case "min":
+        echo 'min($a, $b) = ' . min($a, $b);
+        break;
+    case "log":
+        echo 'log($a, $b) = ' . log($a, $b);
+        break;
+    case "type":
+        echo 'type a' . gettype($a);
+        break;
+    default:
+        echo "Не правильная операция";
+endswitch;
 }
-
