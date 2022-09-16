@@ -50,7 +50,7 @@ if (!isArgsExist()) {
 }
 
 $a = $_GET['a'];
-$b = $_GET['b'];
+$b = $_GET['b'] ?? null;
 $c = $_GET['c'];
 
 if (!isArgsNumbers($a, $b)) {
