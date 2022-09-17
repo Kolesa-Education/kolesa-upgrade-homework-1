@@ -29,7 +29,8 @@ switch ($c) {
     case "//":
         if ($b != 0) {
             echo $a % $b;
-        }  else {
+        }
+        else {
             echo "модуля нуля не существует";
         }
         break;
