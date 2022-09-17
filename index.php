@@ -1,56 +1,56 @@
 <?php
 
-	// Проверить работу калькулятора можно тут - https://sitecodera.ru/demo/calc
+// Проверить работу калькулятора можно тут - https://sitecodera.ru/demo/calc
 
-	if (isset($_GET['operator'])) {
-		$a = $_GET['a'];
-		$b = $_GET['b'];
-		$operator = $_GET['operator'];
-		
-		if (is_numeric($a) && is_numeric($b)) {
+if (isset($_GET['operator'])) {
+	$a = $_GET['a'];
+	$b = $_GET['b'];
+	$operator = $_GET['operator'];
 
-			switch ($operator) {
-				case "A+B":
-					$result = $a + $b;
-					break;
-				case "A-B":
-					$result = $a - $b;
-					break;
-				case "A*B":
-					$result = $a * $b;
-					break;
-				case "A/B":
-					if ($b == 0) {
-						$error = "Ошибка! На ноль делить нельзя.";
-					} else {
-						$result = $a / $b;
-					}
-					break;
-				case "Корень из A в степени B":
-					//$result = sqrt($a);
-					$result = $a ** (1/$b);
-					break;
-				case "A*B%":
-					$result = $a*$b/100;
-					break;
-				case "А в степени B":
-					$result = $a ** $b;
-					break;
-				case "Сравнить A и B":
-					if ($a < $b) {
-						$result = "A < B";
-					} else if ($a > $b) {
-						$result = "A > B";
-					} else {
-						$result = "A = B";
-					}
-					break;
-			}
-		} else {
-			$error = "Ошибка! Введите A и B";
+	if (is_numeric($a) && is_numeric($b)) {
+
+		switch ($operator) {
+			case "A+B":
+				$result = $a + $b;
+				break;
+			case "A-B":
+				$result = $a - $b;
+				break;
+			case "A*B":
+				$result = $a * $b;
+				break;
+			case "A/B":
+				if ($b == 0) {
+					$error = "Ошибка! На ноль делить нельзя.";
+				} else {
+					$result = $a / $b;
+				}
+				break;
+			case "Корень из A в степени B":
+				//$result = sqrt($a);
+				$result = $a ** (1/$b);
+				break;
+			case "A*B%":
+				$result = $a*$b/100;
+				break;
+			case "А в степени B":
+				$result = $a ** $b;
+				break;
+			case "Сравнить A и B":
+				if ($a < $b) {
+					$result = "A < B";
+				} else if ($a > $b) {
+					$result = "A > B";
+				} else {
+					$result = "A = B";
+				}
+				break;
 		}
-
+	} else {
+		$error = "Ошибка! Введите A и B";
 	}
+
+}
 
 ?>
 
