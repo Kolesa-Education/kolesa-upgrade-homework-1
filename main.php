@@ -9,36 +9,39 @@ extract($_GET);
 
 if (!(isset($a, $b, $c))){
     echo "Set all vars a, b and c!";
-} elseif (!(is_numeric($a)) || !(is_numeric($b))){
+    exit();
+}
+if (!(is_numeric($a)) || !(is_numeric($b))){
     echo " a and b vars's values must be numeric";
-} else {
-    switch ($c) {
-        case "+":
-            echo $a + $b;
-            break;
-        case "-":
-            echo $a - $b;
-            break;
-        case "/":
-            if ($b == 0){
-                echo "Division by zero!";
-            } else {
-                echo $a / $b;
-            }
-            break;
-        case "*":
-            echo $a * $b;
-            break;
-        case "mod":
-            echo $a % $b;
-            break;
-        case "^":
-            echo $a ** $b;
-            break;
-        case '%':
-            echo $a * ($b / 100);
-            break;
-        default:
-            echo "Unknown operation!";
-    }
+    exit();
+}
+
+switch ($c) {
+    case "+":
+        echo $a + $b;
+        break;
+    case "-":
+        echo $a - $b;
+        break;
+    case "/":
+        if ($b == 0){
+            echo "Division by zero!";
+        } else {
+            echo $a / $b;
+        }
+        break;
+    case "*":
+        echo $a * $b;
+        break;
+    case "mod":
+        echo $a % $b;
+        break;
+    case "^":
+        echo $a ** $b;
+        break;
+    case '%':
+        echo $a * ($b / 100);
+        break;
+    default:
+        echo "Unknown operation!";
 }
