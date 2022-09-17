@@ -26,16 +26,19 @@ function checkGetRequest($param)
             } else {
                 printError($param);
             };
+            break;
         case $param == "c":
-            if (!empty($_GET[$param] && checkOperator($_GET[$param]))) {
+            if (!empty($_GET[$param]) && checkOperator($_GET[$param])) {
                 return $_GET[$param];
             } else {
                 printError($param);
             }
+            break;
     }
 }
 
 function calculator($a, $b, $c)
+
 {
     if (is_numeric($a) && is_numeric($b) && $c) {
         switch ($c) {
@@ -87,27 +90,21 @@ function calculator($a, $b, $c)
 
 function checkNumber($param)
 {
-    if (!empty($_GET[$param]) && is_numeric($_GET[$param])) {
-        return true;
-    } else {
-        return false;
-    }
+    return (!empty($_GET[$param]) && is_numeric($_GET[$param]));
 }
+
 
 function checkOperator($operator)
 {
     $operators = ["+", "-", "/", "*", "sqrt", "**", "%", "=", "<", ">", "<=", ">="];
-    if (in_array($operator, $operators)) {
-        return true;
-    } else {
-        return false;
-    }
+    return (in_array($operator, $operators));
 }
 
 function printError($param)
 {
     echo "Параметр {$param} не передан или не соответствует типу <br>";
 }
+
 ?>
 
 </html>
