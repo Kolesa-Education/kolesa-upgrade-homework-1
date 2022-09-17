@@ -10,8 +10,8 @@
 <body>
 <form action="" method="GET">
     <label for="a">a:</label>
-    <input type="text" name="a" value="<?= $_GET['a'] ?>">
-    <select name="operator" value="<?= $_GET['$operator'] ?>">
+    <input type="text" name="a" value="<?= isset($_GET['a']) ?>">
+    <select name="operator" value="<?= isset($_GET['$operator']) ?>">
         <option value="None">Оператор</option>
         <option value="+">+</option>
         <option value="-">-</option>
@@ -23,7 +23,7 @@
         <option value="<"><</option>
     </select>
     <label for="b">b:</label>
-    <input type="text" name="b" value="<?= $_GET['b'] ?>">
+    <input type="text" name="b" value="<?= isset($_GET['b']) ?>">
     <span>=</span>
     <?php
 
