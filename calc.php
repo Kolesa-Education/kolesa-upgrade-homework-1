@@ -16,7 +16,7 @@ $a = $_GET['a'];
 $b = $_GET['b'];
 $c = $_GET['c'];
 
-if (gettype($a * 1) != "integer" || gettype($b * 1) != "integer") {
+if (!is_int($a * 1) || !is_int($b * 1)) {
     echo "enter only integers in parameters a and b" . PHP_EOL;
     return;
 }
