@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32001740-baef-4e07-a7b4-b01c021de7e0" name="Default Changelist" comment="" />
+    <list default="true" id="32001740-baef-4e07-a7b4-b01c021de7e0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,9 +19,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="2Esza4h449H3uNGhrJmggjamH0y" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -27,7 +33,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/get_check.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
@@ -50,7 +56,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663399139265</updated>
-      <workItem from="1663399140298" duration="16857000" />
+      <workItem from="1663399140298" duration="17503000" />
+      <workItem from="1663426893104" duration="121000" />
     </task>
     <servers />
   </component>
@@ -80,47 +87,47 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2703" y="291" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663412987546" />
-    <state x="2703" y="322" key="FileChooserDialogImpl" timestamp="1663419189071">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="783" y="322" key="FileChooserDialogImpl" timestamp="1663427014040">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="783" y="322" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1663399450136" />
+    <state x="783" y="322" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1663427014040" />
     <state x="2703" y="322" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663419189071" />
-    <state width="1340" height="328" key="GridCell.Tab.0.bottom" timestamp="1663416425355">
+    <state width="1340" height="328" key="GridCell.Tab.0.bottom" timestamp="1663421229334">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1340" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1663399702296" />
-    <state width="1340" height="328" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663416425355" />
-    <state width="1340" height="328" key="GridCell.Tab.0.center" timestamp="1663416425355">
+    <state width="1340" height="328" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663421229334" />
+    <state width="1340" height="328" key="GridCell.Tab.0.center" timestamp="1663421229334">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1340" height="266" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1663399702296" />
-    <state width="1340" height="328" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663416425355" />
-    <state width="1340" height="328" key="GridCell.Tab.0.left" timestamp="1663416425355">
+    <state width="1340" height="328" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663421229334" />
+    <state width="1340" height="328" key="GridCell.Tab.0.left" timestamp="1663421229334">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1340" height="266" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1663399702296" />
-    <state width="1340" height="328" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663416425355" />
-    <state width="1340" height="328" key="GridCell.Tab.0.right" timestamp="1663416425355">
+    <state width="1340" height="328" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663421229334" />
+    <state width="1340" height="328" key="GridCell.Tab.0.right" timestamp="1663421229334">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1340" height="266" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1663399702296" />
-    <state width="1340" height="328" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663416425355" />
-    <state width="1340" height="328" key="GridCell.Tab.1.bottom" timestamp="1663416425355">
+    <state width="1340" height="328" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663421229334" />
+    <state width="1340" height="328" key="GridCell.Tab.1.bottom" timestamp="1663421229335">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="328" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663416425355" />
-    <state width="1340" height="328" key="GridCell.Tab.1.center" timestamp="1663416425355">
+    <state width="1340" height="328" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663421229335" />
+    <state width="1340" height="328" key="GridCell.Tab.1.center" timestamp="1663421229335">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="328" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663416425355" />
-    <state width="1340" height="328" key="GridCell.Tab.1.left" timestamp="1663416425355">
+    <state width="1340" height="328" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663421229335" />
+    <state width="1340" height="328" key="GridCell.Tab.1.left" timestamp="1663421229334">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="328" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663416425355" />
-    <state width="1340" height="328" key="GridCell.Tab.1.right" timestamp="1663416425355">
+    <state width="1340" height="328" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663421229334" />
+    <state width="1340" height="328" key="GridCell.Tab.1.right" timestamp="1663421229335">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="328" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663416425355" />
+    <state width="1340" height="328" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1663421229335" />
     <state x="2757" y="471" key="NewPhpFileDialog" timestamp="1663407889007">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
