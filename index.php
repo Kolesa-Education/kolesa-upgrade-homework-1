@@ -8,13 +8,13 @@ if(!is_numeric($a) || !is_numeric($b)){
     echo "Вы ввели неверные значения!";
 }
 else{
-    if ($c == "+") {
+    if ($c == "%2B" || $c == "+") {
         echo ($a + $b);
     } elseif ($c == "-") {
         echo $a - $b;
-    } elseif ($c == "*") {
+    } elseif ($c == "*" || $c == "%2A") {
         echo $a * $b;
-    } elseif ($c == "/") {
+    } elseif ($c == "/" || $c == "%2F") {
         if ($b == 0){
             echo("На ноль делить нельзя!");
         } else {
