@@ -45,14 +45,12 @@ function Divide($num1, $num2)
 
 function IsBigger($num1, $num2)
 {
-    ($num1 > $num2) ? $msg = "true" : $msg = "false";
-    return $msg;
+    return ($num1 > $num2) ?  "true" : "false";
 }
 
 function IsEqual($num1, $num2)
 {
-    ($num1 == $num2) ? $msg = "true" : $msg = "false";
-    return $msg;
+    return ($num1 == $num2) ? "true" : "false";
 }
 
 ?>

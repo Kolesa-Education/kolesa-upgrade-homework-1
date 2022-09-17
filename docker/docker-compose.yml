@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app:
-    image: php:8.2-rc-fpm
+    image: php:8.2-rc-fpm-alpine
     container_name: phpfpmapp
     restart: always
     working_dir: /var/www
