@@ -13,7 +13,7 @@ compare => compare
 $a = $_GET['a'] ?? null;
 $b = $_GET['b'] ?? null;
 $c = $_GET['c'] ?? null;
-if (!isset($_GET['a']) || !isset($_GET['b']) || !isset($_GET['c'])) {
+if (!isset($a) || !isset($b) || !isset($c)) {
     echo "данные не введены";
     exit;
 }
@@ -26,6 +26,7 @@ if (is_numeric($a) && is_numeric($b)) {
 
 function calc($a, $b, $c)
 {
+    $wrongOperator = sprintf("значение c=%c' не является оператором", $c);
     switch ($c) {
         case "+":
             echo $a + $b;
@@ -47,17 +48,16 @@ function calc($a, $b, $c)
             break;
         case "compare":
             if ($a > $b)
-                echo "$a > $b";
+                echo $a . " > " . $b;
             if ($a < $b)
-                echo "$a < $b";
+                echo $a . " < " . $b;
             if ($a == $b)
-                echo "$a = $b";
+                echo $a . "=" . $b;
             break;
         case "%":
             echo $a / 100 * $b;
             break;
         default:
-            echo "значение c='$c' не является оператором";
+            echo $wrongOperator;
     }
 }
-?>
