@@ -1,43 +1,44 @@
 <?php
 $error = "";
-$zerodiv = "";
-$x = "";
-$y = "";
+$result1 = "";
+$result2 = "";
 $result = "";
 if (isset($_GET['operation'])) {
-    $x = $_GET['num1'];
-    $y = $_GET['num2'];
+    $result1 = $_GET['num1'];
+    $result2 = $_GET['num2'];
     $operation = $_GET['operation'];
 
-    if (is_numeric($x) && is_numeric($y)) {
+    try {
+        if (is_numeric($result1) && is_numeric($result2)) {
 
-        switch ($operation) {
-            case "add":
-                $result = $x + $y;
-                break;
-            case "subtract":
-                $result = $x - $y;
-                break;
-            case "multiply":
-                $result = $x * $y;
-                break;
-            case "divide":
-                if ($y == 0) {
-                    $zerodiv = "Division by zero error! Enter another Number 2";
-                } else {
-                    $result = $x / $y;
-                }
+            switch ($operation) {
+                case "add":
+                    $result = $result1 + $result2;
+                    break;
+                case "subtract":
+                    $result = $result1 - $result2;
+                    break;
+                case "multiply":
+                    $result = $result1 * $result2;
+                    break;
+                case "divide":
+                    $result = $result1 / $result2;
+                    break;
+                case "module":
+                    $result = $result1 % $result2;
+                    break;
+                case "exponent":
+                    $result = $result1 ** $result2;
+                    break;
+            }
 
-                break;
-            case "module":
-                $result = $x % $y;
-                break;
-            case "exponent":
-                $result = $x ** $y;
-                break;
+        } else {
+            $error = "Enter numbers first";
         }
-    } else {
-        $error = "Enter numbers first";
+    } catch (DivisionByZeroError $e) {
+        echo $e->getMessage() . "! Enter another Number 2";
+    } catch (DivisionByZeroError) {
+        echo "Modulo by zero! Enter another Number 2";
     }
 }
 ?>
@@ -51,25 +52,24 @@ if (isset($_GET['operation'])) {
 </head>
 
 <body>
-    <h2>
+    <p>
         <?=$error?>
-        <?=$zerodiv?>
-    </h2>
+    </p>
     <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
         <!-- Number 1 -->
         <div>
             <label for="num1">Number 1</label>
-            <input type="number" name="num1" id="num1" value="<?=$x?>">
+            <input type="number" step="0.01" name="num1" id="num1" value="<?=$x?>">
         </div>
         <!-- Number 2 -->
         <div>
             <label for="num2">Number 2</label>
-            <input type="number" name="num2" id="num2" value="<?=$y?>">
+            <input type="number" name="num2" step="0.01" id="num2" value="<?=$y?>">
         </div>
         <!-- Result -->
         <div>
             <label for="result">Result</label>
-            <input type="number" id="result" value="<?=$result?>" disabled>
+            <input type="number" step="0.01" id="result" value="<?=$result?>" disabled>
         </div>
         <!-- Operation -->
         <div>
