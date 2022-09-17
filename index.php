@@ -6,9 +6,15 @@
 // -   => -
 // mod - %25
 
-$a = $_GET['a'];
-$b = $_GET['b'];
-$c = $_GET['c'];
+$a = $_GET['a'] ?? null;
+$b = $_GET['b'] ?? null;
+$c = $_GET['c'] ?? null;
+
+if ((is_null($a)) || (is_null($b)) || (is_null($c))) {
+    echo "missing values";
+    exit;
+}
+
 
 $regex = '/^[-+]?(\d*[.])?\d+$/';
 
