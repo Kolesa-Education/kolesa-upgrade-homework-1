@@ -1,50 +1,57 @@
 <?php
-$error = "";
-$result1 = "";
-$result2 = "";
+
+declare(strict_types = 1);
+
+$noNumbersError = "";
+$num1 = "";
+$num2 = "";
 $result = "";
-if (isset($_GET['operation'])) {
-    $result1 = $_GET['num1'];
-    $result2 = $_GET['num2'];
-    $operation = $_GET['operation'];
+
+if (isset($_GET['operator'])) {
+    $num1 = $_GET['num1'];
+    $num2 = $_GET['num2'];
+    $operator = $_GET['operator'];
 
     try {
-        if (is_numeric($result1) && is_numeric($result2)) {
+        if (is_numeric($num1) && is_numeric($num2)) {
 
-            switch ($operation) {
+            switch ($operator) {
                 case "add":
-                    $result = $result1 + $result2;
+                    $result = $num1 + $num2;
                     break;
                 case "subtract":
-                    $result = $result1 - $result2;
+                    $result = $num1 - $num2;
                     break;
                 case "multiply":
-                    $result = $result1 * $result2;
+                    $result = $num1 * $num2;
                     break;
                 case "divide":
-                    $result = $result1 / $result2;
+                    $result = $num1 / $num2;
                     break;
                 case "module":
-                    $result = $result1 % $result2;
+                    $result = $num1 % $num2;
                     break;
                 case "exponent":
-                    $result = $result1 ** $result2;
+                    $result = $num1 ** $num2;
+                    break;
+                default:
+                    echo "Error! Chose another operator";
                     break;
             }
 
         } else {
-            $error = "Enter numbers first";
+            $noNumbersError = "Enter numbers first";
         }
     } catch (DivisionByZeroError $e) {
         echo $e->getMessage() . "! Enter another Number 2";
-    } catch (DivisionByZeroError) {
-        echo "Modulo by zero! Enter another Number 2";
+    } catch (TypeError $e) {
+        echo "Error!: " . $e->getMessage();
     }
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -53,39 +60,35 @@ if (isset($_GET['operation'])) {
 
 <body>
     <p>
-        <?=$error?>
+        <?=$noNumbersError?>
     </p>
     <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
         <!-- Number 1 -->
         <div>
             <label for="num1">Number 1</label>
-            <input type="number" step="0.01" name="num1" id="num1" value="<?=$x?>">
+            <input type="number" step=any name="num1" id="num1" value="<?=$num1?>">
         </div>
         <!-- Number 2 -->
         <div>
             <label for="num2">Number 2</label>
-            <input type="number" name="num2" step="0.01" id="num2" value="<?=$y?>">
+            <input type="number" name="num2" step=any id="num2" value="<?=$num2?>">
         </div>
         <!-- Result -->
         <div>
             <label for="result">Result</label>
-            <input type="number" step="0.01" id="result" value="<?=$result?>" disabled>
+            <input type="number" step=any id="result" value="<?=$result?>" disabled>
         </div>
         <!-- Operation -->
         <div>
-            <input type="submit" value="add" name="operation">
-            <input type="submit" value="subtract" name="operation">
-            <input type="submit" value="multiply" name="operation">
-            <input type="submit" value="divide" name="operation">
-            <input type="submit" value="module" name="operation">
-            <input type="submit" value="exponent" name="operation">
+            <input type="submit" value="add" name="operator">
+            <input type="submit" value="subtract" name="operator">
+            <input type="submit" value="multiply" name="operator">
+            <input type="submit" value="divide" name="operator">
+            <input type="submit" value="module" name="operator">
+            <input type="submit" value="exponent" name="operator">
         </div>
     </form>
 
 </body>
 
 </html>
-
-
-
-
