@@ -1,11 +1,11 @@
 <?php
 
-$a = $_GET['a'];
-$b = $_GET['b'];
-$c = $_GET['c'];
+$a = $_GET['a'] ?? null;
+$b = $_GET['b'] ?? null;
+$c = $_GET['c'] ?? null;
 
-function checkValidate($a, $b, $c){
-    if (!isset($a) || !isset($b) || !isset($c)){
+function checkValidate($a, $b, $c) {
+    if (!isset($a) || !isset($b) || !isset($c)) {
         echo 'Empty request';
         return false;
     }
@@ -16,11 +16,11 @@ function checkValidate($a, $b, $c){
     return true;
 }
 
-if (checkValidate($a, $b, $c)){
+if (checkValidate($a, $b, $c)) {
     calc($a, $b, $c);
 }
 
-function calc($a, $b, $c){
+function calc($a, $b, $c) {
    switch ($c) {
     case "+":
         echo $a + $b;
@@ -29,7 +29,7 @@ function calc($a, $b, $c){
         echo $a - $b;
         break;
     case "/":
-        if ($b == 0){
+        if ($b == 0) {
             echo 'No division by 0';
             break;
         }
@@ -39,7 +39,7 @@ function calc($a, $b, $c){
         echo $a * $b;
         break;
     case "%":
-        if ($b == 0){
+        if ($b == 0) {
             echo 'No modulo by 0';
             break;
         }
@@ -49,34 +49,34 @@ function calc($a, $b, $c){
         echo $a ** $b;
         break;
     case ">":
-        if ($a > $b){
+        if ($a > $b) {
             echo "true";
             break;
-        }else{
+        } else {
             echo "false";
             break;
         }
     case "<":
-        if ($a < $b){
+        if ($a < $b) {
             echo "true";
             break;
-        }else{
+        } else {
             echo "false";
             break;
         }
     case "<":
-        if ($a < $b){
+        if ($a < $b) {
             echo "true";
             break;
-        }else{
+        } else {
             echo "false";
             break;
         }
     case "=":
-        if ($a==$b){
+        if ($a==$b) {
             echo "true";
             break;
-        }else{
+        } else {
             echo "false";
             break;
         }
@@ -84,6 +84,3 @@ function calc($a, $b, $c){
         echo "bad operation";
 } 
 }
-
-?>
-
