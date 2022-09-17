@@ -2,9 +2,9 @@
 $a = $_GET["a"];
 $b = $_GET["b"];
 $c = $_GET["c"];
-$res;
-if(intval(($_GET["a"]) && intval($_GET["b"]))){
-    
+$res = 0;
+
+if(is_numeric($_GET["a"]) && is_numeric($_GET["b"])){
     switch ($c){
         case "+":
             echo $res = $a + $b;
@@ -55,9 +55,8 @@ if(intval(($_GET["a"]) && intval($_GET["b"]))){
             }
             
     }
-}else if(is_string($_GET["a"]) && is_string($_GET["b"])){
-    echo "Введены некорректные аргументы";
-    exit;
+}else{
+    echo "Введены некорректные данные";
 }
 
 
