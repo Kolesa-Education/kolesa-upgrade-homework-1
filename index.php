@@ -10,7 +10,7 @@
 <body>
     <div class="wrapper">
         <div class="wrapper__form">
-            <form action="/index.php" method="get">
+            <form action="./index.php" method="get">
                 <label for="firstNumber">First Number: </label><br>
                 <input type="text" name="firstNum"><br>
                 <label for="secondNumber">Second Number: </label><br> 
