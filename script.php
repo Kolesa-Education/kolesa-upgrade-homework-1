@@ -34,7 +34,7 @@ switch ($c) {
             echo "модуля нуля не существует";
         }
         break;
-	default:
+    default:
         echo "не правильный запрос";
         break;
 }
