@@ -2,10 +2,7 @@
 <?php
 
 function checkIfAllInputsExist() {
-  if(!(isset($_GET['a'], $_GET['b'], $_GET['c']))) {
-    return false;
-  }
-  return true;
+   return isset($_GET['a'], $_GET['b'], $_GET['c']);
 }
 
 if(!checkIfAllInputsExist()) {
@@ -17,10 +14,7 @@ $b = $_GET['b'];
 $c = $_GET['c'];
 
 function checkIfNumeric($firstInput, $secondInput) {
-  if(!is_numeric($firstInput) || !is_numeric($secondInput)) {
-    return false;
-  }
-  return true;
+  return is_numeric($firstInput) && is_numeric($secondInput);
 }
 
 function calculate($a,$b,$c) {
