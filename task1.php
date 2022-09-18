@@ -1,19 +1,16 @@
 <?php
 function transform($num){
-    if (!is_numeric($num) ){
+    if (!is_numeric($num)){
         return;
     }
-
-    $num=(double)$num; 
-    
-    return $num;
+    return (double) $num;
 }
 
-$a=transform($_GET['a']);
-$b=transform($_GET['b']);
+$a = transform($_GET['a']);
+$b = transform($_GET['b']);
 $c = $_GET['c'];
 
-if (is_null($a)||is_null($b)||is_null($c)){
+if (is_null($a) || is_null($b) || is_null($c)){
     echo "Incorrect input";
     return;
 }
@@ -26,7 +23,7 @@ switch ($c) {
         echo $a - $b;
         break;
     case "/":  
-        if ($b==0.0){
+        if ($b == 0.0){
             echo "Cannot be divided by 0";
             break;
         }
@@ -36,18 +33,30 @@ switch ($c) {
         echo $a * $b;
         break;
     case "^":
-        echo pow($a,$b);
+        echo pow($a, $b);
         break;
     case "%":
-        echo $a*($b/100);
+        echo $a*($b /100);
         break;
-    case "?":
+    case ">":
         if ($a>$b){
-            echo '>';
-        }else if ($a<$b){
-            echo '<';
+            echo 'TRUE';
         }else{
-            echo '=';
+            echo 'FALSE';
+        }
+        break;
+    case "<":
+        if ($a<$b){
+            echo 'TRUE';
+        }else{
+            echo 'FALSE';
+        }
+        break;
+    case "==":
+        if ($a==$b){
+            echo 'TRUE';
+        }else{
+            echo 'FALSE';
         }
         break;
     default:
