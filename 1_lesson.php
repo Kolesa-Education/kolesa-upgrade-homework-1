@@ -3,113 +3,93 @@
 
 //Проверка на ошибки
 
-if (isset($_GET['op'])) {
+if (isset($_GET['op'], $_GET['n1'] ,$_GET['n2'])) {
 
     $a = $_GET['n1'];
     $b = $_GET['n2'];
     $op = $_GET['op'];
 
-
     if (is_numeric($a) && is_numeric($b)) {
 
         echo check_op($a, $b, $op);
 
-
     } else {
-
         echo "Ошибка!Не верно введены данные!";
-
     }
 
-}   else {
-
-    echo "Ошибка!";
-
 }
-
-
 // Функция калькулятора
 
-function check_op($a, $b, $op){
+    function check_op($a, $b, $op){
 
-    switch ($op)
-    {
-        case '+':
-            $c = $a + $b;
-            return "$a + $b = $c";
-            break;
+        switch ($op)
+        {
+            case '+':
+                $c = $a + $b;
+                return "$a + $b = $c";
 
-        case '-':
-            $c = $a - $b;
-            return "$a - $b = $c";
-            break;
+            case '-':
+                $c = $a - $b;
+                return "$a - $b = $c";
 
-        case '*':
-            $c = $a * $b;
-            return "$a * $b = $c";
-            break;
+            case '*':
+                $c = $a * $b;
+                return "$a * $b = $c";
 
-        case '/':
-            if ($a == 0 ){
-                return "Ты хочешь устроить апокалипсис? O_O";
-                break;
-            }
-            $c = $a / $b;
-            return "$a / $b = $c";
-            break;
+            case '/':
+                if ($b == 0 ){
+                    return "Ты хочешь устроить апокалипсис? O_O";
+                }
+                $c = $a / $b;
+                return "$a / $b = $c";
 
-        case 'Xⁿ':
-            $c = $a ** $b;
-            return "$a в степени $b = $c";
-            break;
+            case 'Xⁿ':
+                $c = $a ** $b;
+                return "$a в степени $b = $c";
 
-        case 'на сколько % a>b?':
-            $c = round((($a / $b) * 100)-100);
-            return  "$a больше $b на $c".'%' ;
-            break;
+            case 'на сколько % a>b?':
+                $c = round((($a / $b) * 100)-100);
+                return  "$a больше $b на $c".'%' ;
 
-        case 'на сколько % a<b?':
-            $c = round(100-(($b / $a) * 100));
-            return "$a меньше $b на $c".'%' ;
-            break;
+            case 'на сколько % a<b?':
+                $c = round(100-(($b / $a) * 100));
+                return "$a меньше $b на $c".'%' ;
 
-        case 'на сколько % увеличить a=>b?':
-            $c = round(($b*($b - $a)) / $a);
-            return "Что бы получить $b надо $a увеличить на $c".'%';
-            break;
+            case 'на сколько % увеличить a=>b?':
+                $c = round(($b*($b - $a)) / $a);
+                return "Что бы получить $b надо $a увеличить на $c".'%';
 
-        case 'на сколько % уменьшить a=>b?':
-            $c = round(($b*($b - $a)) / $a);
-            return "Что бы получить $b надо $a уменьшить на $c".'%';
-            break;
+            case 'на сколько % уменьшить a=>b?':
+                $c = round(($b*($b - $a)) / $a);
+                return "Что бы получить $b надо $a уменьшить на $c".'%';
 
-        case 'Сравнить':
-            $c = $a<$b ? $b-$a : $a-$b;
+            case 'Сравнить':
+                $c = $a<$b ? $b-$a : $a-$b;
 
-            if($a<$b){
-                $dif = 'меньше';
-            }elseif ($a == $b) {
-                $dif = 'равно';
-            }else{
-                $dif = 'больше';
-            }
-            return "$a $dif $b на $c" ;
-            break;
+                if  ($a<$b)  {
+                   $dif = 'меньше';
 
-        case '√Xⁿ':
-            $c = $a ** (1/$b);;
-            return "Корень из $a в степени $b = $c" ;
-            break;
+                }   elseif ($a == $b) {
+                    $dif = 'равно';
 
-        case '?':
-            return '';
-            break;
+                }    else    {
+                    $dif = 'больше';
+                }
+                return "$a $dif $b на $c" ;
 
-        default:
-            return 'Что-то пошло не так!';
+            case '√Xⁿ':
+                $c = $a ** (1/$b);
+                return "Корень из $a в степени $b = $c" ;
+
+            case '?':
+                return "Мне кажется что то не сработало, нажми на меня еще раз:)" ;
+
+
+            default:
+                return 'Что-то пошло не так!';
+        }
+
     }
-
-}
 
 
 ?>
