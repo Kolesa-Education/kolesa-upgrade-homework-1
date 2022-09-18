@@ -19,7 +19,7 @@
 	<?php
 
 	function hasArgumentsSet() {
-		return isset($_GET['a']) && isset($_GET['b']) && isset($_GET['c']);
+		return isset($_GET['a'], $_GET['b'], $_GET['c']);
 	}
 
 	function areValidNumbers() {
@@ -28,9 +28,9 @@
 
 	function isValidOperator() {
 		$op = $_GET['c'];
-		return $op == "+" || $op == "-" || $op == "*" || $op == "/"
-			|| $op == "%" || $op == "^" || $op == ">"
-			|| $op == "<";
+		return strcmp($op, "+") == 0 || strcmp($op, "-") == 0 || strcmp($op, "*") == 0 || strcmp($op, "/") == 0
+			|| strcmp($op, "%") == 0 || strcmp($op, "^") == 0 || strcmp($op, ">") == 0
+			|| strcmp($op, "<") == 0;
 	}
 
 	if (!hasArgumentsSet()) {
@@ -45,7 +45,6 @@
 		$a = $_GET['a'];
 		$b = $_GET['b'];
 		$c = $_GET['c'];
-		$result;
 
 		switch ($c) {
 			case "+":
@@ -58,7 +57,11 @@
 				$result = $result . $a * $b;
 				break;
 			case "/":
-				$result = $result . $a / $b;
+				if ($b == 0) {
+					$result = "You can not divide by zero!";
+				} else {
+					$result = $result . $a / $b;
+				}
 				break;
 			case "%":
 				$result = $result . ($a * $b / 100);
