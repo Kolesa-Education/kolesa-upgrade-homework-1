@@ -5,7 +5,8 @@ $c = $_GET['c'] ?? false;
 if ((empty($a) && $a != 0) || (empty($b) && $b != 0) || empty($c)){
     echo "one of the parameters is empty";
     return;
-} elseif(!is_numeric($a) || !is_numeric($b)){
+} 
+if(!is_numeric($a) || !is_numeric($b)){
     echo "one of this is not a number";
     return;
 }
