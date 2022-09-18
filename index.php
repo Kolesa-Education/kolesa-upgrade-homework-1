@@ -2,7 +2,7 @@
 <?php
 
 function checkIfAllInputsExist() {
-  if(!(isset($_GET['a']) && isset($_GET['b']) && isset($_GET['c']))) {
+  if(!(isset($_GET['a'], $_GET['b'], $_GET['c']))) {
     exit("Please, check your inputes \n");
   }
 }
