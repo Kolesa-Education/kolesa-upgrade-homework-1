@@ -1,9 +1,14 @@
 <?php 
+    if(!isset($_GET['a']) || !isset($_GET['b']) || !isset($_GET['c'])){
+        echo "Переданы не все аргументы";
+        die();
+    }
+
     $num1 = $_GET['a'];
     $num2 = $_GET['b'];
     $action = $_GET['c'];
 
-    if(!(is_numeric($num1)) || !(is_numeric($num2))){
+    if(!is_numeric($num1) || !is_numeric($num2)){
         echo "Переданы значения не типа integer или float";
         die();
     }
