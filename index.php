@@ -3,27 +3,24 @@
 
 function checkIfAllInputsExist() {
   if(!(isset($_GET['a'], $_GET['b'], $_GET['c']))) {
-    exit("Please, check your inputes \n");
+    return false;
   }
+  return true;
 }
 
-checkIfAllInputsExist();
+if(!checkIfAllInputsExist()) {
+  exit("Please, check your inputes. Some of them do not exist. \n");
+}
 
 $a = $_GET['a'];
 $b = $_GET['b'];
 $c = $_GET['c'];
 
-function checkIfNumericOrNull() {
-  $arg_list = func_get_args();
-  for ($argIdx = 0; $argIdx < count($arg_list); $argIdx++) {
-    $currentArgument = $arg_list[$argIdx];
-    if(empty($currentArgument)) {
-      exit(($argIdx+1)."th argument is null. Please, enter an integer or float \n");
-    }
-    if(!is_numeric($currentArgument)) {
-      exit($currentArgument." is not a number or float \n");
-    } 
+function checkIfNumeric($firstInput, $secondInput) {
+  if(!is_numeric($firstInput) || !is_numeric($secondInput)) {
+    return false;
   }
+  return true;
 }
 
 function calculate($a,$b,$c) {
@@ -59,5 +56,7 @@ function calculate($a,$b,$c) {
   }
 }
 
-checkIfNumericOrNull($a, $b); 
+if(!checkIfNumeric($a, $b)) {
+  exit("Please, check your inputes. They are not numeric. \n");
+} 
 calculate($a,$b,$c);
