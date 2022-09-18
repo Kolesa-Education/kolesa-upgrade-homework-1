@@ -32,7 +32,7 @@ function calculate($a,$b,$c) {
         echo $a - $b;
         break;
     case "/":
-        if ($b == 0) {
+        if (intval($b) === 0) {
           echo "Not a number";
         } else {
           echo $a / $b;
