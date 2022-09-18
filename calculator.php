@@ -2,7 +2,7 @@
 $a = $_GET['a'] ?? null;
 $b = $_GET['b'] ?? null;
 $c = $_GET['c'] ?? null;
-if ($a == null || $b == null || $c == null){
+if ($a === null || $b === null || $c === null){
     echo "one of the parameters is empty";
     return;
 } 
@@ -19,6 +19,10 @@ switch ($c):
         echo '$a - $b = ' . ($a - $b);
         break;
     case "/":
+        if($b == 0){
+            echo("can not divide to 0");
+            break;
+        }
         echo '$a / $b = ' . ($a / $b);
         break;
     case "*":
