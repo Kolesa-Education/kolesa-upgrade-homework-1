@@ -3,9 +3,6 @@
     "description": "homework",
     "type": "project",
     "autoload": {
-        "psr-4": {
-            "Kudaiberdy\\KolesaUpgradeHomework1\\": "src/"
-        },
         "files": [
             "src/Runner.php",
             "src/Calculator.php",

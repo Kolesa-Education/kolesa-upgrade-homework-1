@@ -2,20 +2,16 @@
 
 namespace App\Validator;
 
-function validateKeys(array $params, array $requiredParams): bool
+function validateQuery(array $queryParams): bool
 {
-    $queryKeys = array_keys($params);
-    return empty(array_diff($requiredParams, $queryKeys));
-}
-
-function validateValues(array $params, string $keyFirstArg, string $keySecArg): bool
-{
-    $firstArg = $params[$keyFirstArg];
-    $secondArg = $params[$keySecArg];
-    return is_numeric($firstArg) && is_numeric($secondArg);
-}
-
-function validateQueryString(array $queryParams, array $requiredParams): bool
-{
-    return validateKeys($queryParams, $requiredParams) && validateValues($queryParams, ...$requiredParams);
+    if (!isset($queryParams['fArg']) && !is_numeric($queryParams['fArg'])) {
+        return false;
+    }
+    if (!isset($queryParams['sArg']) && !is_numeric($queryParams['sArg'])) {
+        return false;
+    }
+    if (!isset($queryParams['oper'])) {
+        return false;
+    }
+    return true;
 }

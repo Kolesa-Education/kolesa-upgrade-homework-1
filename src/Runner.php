@@ -2,18 +2,18 @@
 
 namespace App\Runner;
 
-use function App\Validator\validateQueryString;
+use function App\Validator\validateQuery;
 use function App\Calculator\calculate;
 
-function run(array $args): float|string
+function run(array $queryParams): float|string
 {
-    if (validateQueryString($args, ['fArg', 'sArg', 'oper']) === false) {
+    if (validateQuery($queryParams) === false) {
         return 'invalid query string
             the request should look like: ?fArg=(float/int)&sArg=(float/int)&oper=(arithmetic operators)';
     }
-    $firstArg = floatval($args['fArg']);
-    $secondArg = floatval($args['sArg']);
-    $operator = $args['oper'];
+    $firstArg = floatval($queryParams['fArg']);
+    $secondArg = floatval($queryParams['sArg']);
+    $operator = $queryParams['oper'];
 
     return calculate($firstArg, $secondArg, $operator);
 }
