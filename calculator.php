@@ -2,7 +2,7 @@
 $a = $_GET['a'] ?? false;
 $b = $_GET['b'] ?? false;
 $c = $_GET['c'] ?? false;
-if (empty($a) || empty($b) || empty($c)){
+if ((empty($a) && $a != 0) || (empty($b) && $b != 0) || empty($c)){
     echo "one of the parameters is empty";
     return;
 } elseif(!is_numeric($a) || !is_numeric($b)){
