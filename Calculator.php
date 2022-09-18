@@ -10,15 +10,16 @@
 // <=> => <=> // сравнение чисел
 
 
-$a = $_GET['a'];
-$b = $_GET['b'];
-$c = $_GET['c'];
 
-if (!isset ($a,$b,$c))
+if (!isset ($_GET['a'],$_GET['b'],$_GET['c']))
 {
     echo "Не все параметры заданы";
     die();
 }
+
+$a = $_GET['a'];
+$b = $_GET['b'];
+$c = $_GET['c'];
 
 if (is_numeric($a) && is_numeric($b)) {
 
