@@ -1,8 +1,8 @@
 <?php
-$a = $_GET['a'] ?? false;
-$b = $_GET['b'] ?? false;
-$c = $_GET['c'] ?? false;
-if ((empty($a) && $a != 0) || (empty($b) && $b != 0) || empty($c)){
+$a = $_GET['a'] ?? null;
+$b = $_GET['b'] ?? null;
+$c = $_GET['c'] ?? null;
+if ($a != null || $b != null || $c != null){
     echo "one of the parameters is empty";
     return;
 } 
