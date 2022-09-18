@@ -1,60 +1,49 @@
 <?php
-
-$error = "";
-$a = "";
-$b = "";
-$result = "";
-if (isset($_GET['operation'])) {
-    $a = $_GET['num1'];
-    $b = $_GET['num2'];
-    $op = $_GET['operation'];
-    if (is_numeric($a) && is_numeric($b)) {
-        switch ($op) {
-            case '+' :
-                $result = $a + $b;
-                break;
-            case '-' :
-                $result = $a - $b;
-                break;
-            case '*' :
-                $result = $a * $b;
-                break;
-            case '/' :
-                if ($b == 0) {
-                    $error = "Error: division by zero";
-                } else {
-                    $result = $a / $b;
-                }
-                break;
-            case '^' :
-                $result = power($a, $b);
-                break;
-            case '%' :
-                $result = percent($a, $b);
-                break;
+    $error = "";
+    $a = "";
+    $b = "";
+    $result = "";
+    if (isset($_GET['operation']) && isset($_GET['num1']) && isset($_GET['num2'])) {
+        $a = $_GET['num1'];
+        $b = $_GET['num2'];
+        $op = $_GET['operation'];
+        if (is_numeric($a) && is_numeric($b)) {
+            switch ($op) {
+                case '+' :
+                    $result = $a + $b;
+                    break;
+                case '-' :
+                    $result = $a - $b;
+                    break;
+                case '*' :
+                    $result = $a * $b;
+                    break;
+                case '/' :
+                    if ($b == 0) {
+                        $error = "Error: division by zero";
+                    } else {
+                        $result = $a / $b;
+                    }
+                    break;
+                case '^' :
+                    $result = pow($a, $b);
+                    break;
+                case '%' :
+                    $result = percent($a, $b);
+                    break;
+                default :
+                    $error = "Invalid operation";
+                    break;
+            }
+        } else {
+            $error = "Invalid input";
         }
-    } else {
-        $error = "Enter number first";
     }
-}
 
-function power($number, $power)
-{
-    $res = 1.0;
-    for ($i = 0; $i < $power; $i++) {
-        $res *= $number;
+    function percent($number, $percent)
+    {
+        return $percent / 100.0 * $number;
     }
-    if ($power >= 0)
-        return $res;
-    else
-        return $number / $res;
-}
-
-function percent($number, $percent)
-{
-    return ($number / 100.0) * $percent;
-}
-
 ?>
 
 <!doctype html>
@@ -78,12 +67,8 @@ function percent($number, $percent)
         <input type="text" id="num3" value="<?= $result ?>" disabled>
     </div>
     <div>
-        <input type="submit" value="+" name="operation">
-        <input type="submit" value="-" name="operation">
-        <input type="submit" value="*" name="operation">
-        <input type="submit" value="/" name="operation">
-        <input type="submit" value="^" name="operation">
-        <input type="submit" value="%" name="operation">
+        <input type="text" name="operation" placeholder="operations">
+        <input type="submit">
     </div>
 </form>
 </body>
