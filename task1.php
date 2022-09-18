@@ -18,30 +18,25 @@ switch ($c) {
     case "%":
         return $a*($b /100);
     case ">":
-        if ($a>$b){
-            return 'TRUE';
-        }else{
-            return 'FALSE';
-        }
+        return ($a>$b) ? 'TRUE' : 'FALSE';
     case "<":
-        if ($a<$b){
-            return 'TRUE';
-        }else{
-            return 'FALSE';
-        }
+        return ($a>$b) ? 'TRUE' :' FALSE';
     case "==":
-        if ($a==$b){
-            return 'TRUE';
-        }else{
-            return 'FALSE';
-        }
+        return ($a>$b) ? 'TRUE' : 'FALSE';
     default:
         return "Incorrect operation";
 }
 }
 
-$a = (!is_numeric($_GET['a'])) ? NULL : (double)$_GET['a'];
-$b = (!is_numeric($_GET['b'])) ? NULL : (double)$_GET['b'];
+function transform($num){
+    if (!is_numeric($num)){
+        return;
+    }
+    return (double) $num;
+}
+
+$a = transform($_GET['a']);
+$b = transform($_GET['b']);
 $c = $_GET['c'];
 
 if (is_null($a) || is_null($b) || is_null($c)){
