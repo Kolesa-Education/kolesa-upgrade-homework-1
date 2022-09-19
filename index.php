@@ -1,9 +1,17 @@
 <?php   
 require 'my_functions.php';
 
+if (empty($_GET)) {
+    echo 'No arguments provided';
+    exit();
+}
+
+
 $a          = $_GET['a'];
 $b          = $_GET['b'];
 $operator   = $_GET['op'];
+
+
 
 if (isset($_GET['array'])) {
     $arr    = explode(',', $_GET['array']);
